@@ -152,7 +152,12 @@
       enabled: yes 
 
   - name: set_timezone
-    shell: timedatectl set-timezone Europe/Moscow    
+    shell: timedatectl set-timezone Europe/Moscow 
+    
+  - name: restart_chrony
+    systemd:
+      name: chrony.service
+      state: restarted
   
      
   
